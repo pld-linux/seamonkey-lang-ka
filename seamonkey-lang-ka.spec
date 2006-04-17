@@ -25,10 +25,10 @@ Georgian resources for SeaMonkey.
 Gruzyjskie pliki jêzykowe dla SeaMonkeya.
 
 %prep
-%setup -q -c -T
-unzip %{SOURCE0}
+%setup -q -c
 install %{SOURCE1} .
-./gen-installed-chrome.sh locale chrome/{GE,ka-GE,ka-unix}.jar > lang-ka-installed-chrome.txt
+./gen-installed-chrome.sh locale chrome/{GE,ka-GE,ka-unix}.jar \
+	> lang-ka-installed-chrome.txt
 
 %install
 rm -rf $RPM_BUILD_ROOT
