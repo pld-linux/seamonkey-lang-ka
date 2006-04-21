@@ -1,5 +1,5 @@
 Summary:	Georgian resources for SeaMonkey
-Summary(pl):	Gruzyjskie pliki jêzykowe dla SeaMonkeya
+Summary(pl):	Gruziñskie pliki jêzykowe dla SeaMonkeya
 Name:		seamonkey-lang-ka
 Version:	1.0
 Release:	1
@@ -22,7 +22,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Georgian resources for SeaMonkey.
 
 %description -l pl
-Gruzyjskie pliki jêzykowe dla SeaMonkeya.
+Gruziñskie pliki jêzykowe dla SeaMonkeya.
 
 %prep
 %setup -q -c
