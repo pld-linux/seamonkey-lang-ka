@@ -1,11 +1,14 @@
+%define	_lang	ka
+%define	_reg	GE
+%define	_lare	%{_lang}-%{_reg}
 Summary:	Georgian resources for SeaMonkey
 Summary(pl):	Gruziñskie pliki jêzykowe dla SeaMonkeya
-Name:		seamonkey-lang-ka
+Name:		seamonkey-lang-%{_lang}
 Version:	1.0
 Release:	1
 License:	GPL
 Group:		X11/Applications/Networking
-Source0:	http://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/%{version}/contrib-localized/seamonkey-%{version}.ka-GE.langpack.xpi
+Source0:	http://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/%{version}/contrib-localized/seamonkey-%{version}.%{_lare}.langpack.xpi
 # Source0-md5:	73042ed25a41518298b2b2dede912251
 Source1:	gen-installed-chrome.sh
 URL:		http://www.mozilla.org/projects/seamonkey/
@@ -27,15 +30,15 @@ Gruziñskie pliki jêzykowe dla SeaMonkeya.
 %prep
 %setup -q -c
 install %{SOURCE1} .
-./gen-installed-chrome.sh locale chrome/{GE,ka-GE,ka-unix}.jar \
-	> lang-ka-installed-chrome.txt
+./gen-installed-chrome.sh locale chrome/{%{_reg},%{_lare},%{_lang}-unix}.jar \
+	> lang-%{_lang}-installed-chrome.txt
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_chromedir}
 
-install chrome/{GE,ka-GE,ka-unix}.jar $RPM_BUILD_ROOT%{_chromedir}
-install lang-ka-installed-chrome.txt $RPM_BUILD_ROOT%{_chromedir}
+install chrome/{%{_reg},%{_lare},%{_lang}-unix}.jar $RPM_BUILD_ROOT%{_chromedir}
+install lang-%{_lang}-installed-chrome.txt $RPM_BUILD_ROOT%{_chromedir}
 cp -r defaults myspell $RPM_BUILD_ROOT%{_datadir}/seamonkey
 
 %clean
@@ -49,10 +52,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{_chromedir}/ka-GE.jar
-%{_chromedir}/ka-unix.jar
-%{_chromedir}/GE.jar
-%{_chromedir}/lang-ka-installed-chrome.txt
-%{_datadir}/seamonkey/defaults/messenger/GE
-%{_datadir}/seamonkey/defaults/profile/GE
-%{_datadir}/seamonkey/myspell/ka-GE*
+%{_chromedir}/%{_lare}.jar
+%{_chromedir}/%{_lang}-unix.jar
+%{_chromedir}/%{_reg}.jar
+%{_chromedir}/lang-%{_lang}-installed-chrome.txt
+%{_datadir}/seamonkey/defaults/messenger/%{_reg}
+%{_datadir}/seamonkey/defaults/profile/%{_reg}
+%{_datadir}/seamonkey/myspell/%{_lare}*
