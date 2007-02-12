@@ -2,7 +2,7 @@
 %define	_reg	GE
 %define	_lare	%{_lang}-%{_reg}
 Summary:	Georgian resources for SeaMonkey
-Summary(pl):	Gruziñskie pliki jêzykowe dla SeaMonkeya
+Summary(pl.UTF-8):   GruziÅ„skie pliki jÄ™zykowe dla SeaMonkeya
 Name:		seamonkey-lang-%{_lang}
 Version:	1.0
 Release:	1
@@ -24,8 +24,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Georgian resources for SeaMonkey.
 
-%description -l pl
-Gruziñskie pliki jêzykowe dla SeaMonkeya.
+%description -l pl.UTF-8
+GruziÅ„skie pliki jÄ™zykowe dla SeaMonkeya.
 
 %prep
 %setup -q -c
