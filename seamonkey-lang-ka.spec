@@ -5,7 +5,7 @@ Summary:	Georgian resources for SeaMonkey
 Summary(pl.UTF-8):	Gruzińskie pliki językowe dla SeaMonkeya
 Name:		seamonkey-lang-%{_lang}
 Version:	1.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/%{version}/contrib-localized/seamonkey-%{version}.%{_lare}.langpack.xpi
@@ -39,7 +39,7 @@ install -d $RPM_BUILD_ROOT%{_chromedir}
 
 install chrome/{%{_reg},%{_lare},%{_lang}-unix}.jar $RPM_BUILD_ROOT%{_chromedir}
 install lang-%{_lang}-installed-chrome.txt $RPM_BUILD_ROOT%{_chromedir}
-cp -r defaults myspell $RPM_BUILD_ROOT%{_datadir}/seamonkey
+cp -a defaults $RPM_BUILD_ROOT%{_datadir}/seamonkey
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -58,4 +58,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_chromedir}/lang-%{_lang}-installed-chrome.txt
 %{_datadir}/seamonkey/defaults/messenger/%{_reg}
 %{_datadir}/seamonkey/defaults/profile/%{_reg}
-%{_datadir}/seamonkey/myspell/%{_lare}*
